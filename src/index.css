@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-slide>div{
+  margin: 0 10px;
+  padding: 10px;
+  
+}
+
+@layer base {
+    body {
+      
+      @apply bg-[#141B26] ; /* Tailwind utility classes */
+    }
+  }
+  
+  
+  /* Add this to your custom CSS file */
+  .marquee-wrapper {
+    display: flex;
+    overflow: hidden; /* Hide anything outside the bounds of the container */
+    width: 100%;
+  }
+  
+  .marquee-content {
+    display: flex; /* Flex ensures the text is treated as a continuous row */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    animation: scroll 10s linear infinite; /* Continuous scrolling animation */
+  }
+  
+  .marquee-content span {
+    padding-right: 100px; /* Space between the duplicate text */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0); /* Start at normal position */
+    }
+    100% {
+      transform: translateX(-50%); /* Move left by half of the container */
+    }
+  }
+  /* Stop the marquee animation on hover */
+.marquee-content:hover {
+  animation-play-state: paused; /* Pauses the animation on hover */
+}
+
